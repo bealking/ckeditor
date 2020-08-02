@@ -22,7 +22,7 @@ module Ckeditor
           end
 
           def format_created_at
-            I18n.l(created_at, format: :short)
+            I18n.l(created_at, format: :default)
           end
 
           def url_content

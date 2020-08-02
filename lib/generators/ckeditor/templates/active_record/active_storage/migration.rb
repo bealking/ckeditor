@@ -7,6 +7,9 @@ class CreateCkeditorAssets < ActiveRecord::Migration[5.2]
       t.string  :data_content_type
       t.integer :data_file_size
       t.string  :data_fingerprint
+
+      t.integer :assetable_id
+      t.string  :assetable_type, limit: 30
       t.string  :type, limit: 30
 
       # Uncomment it to save images dimensions, if your need it
@@ -16,7 +19,8 @@ class CreateCkeditorAssets < ActiveRecord::Migration[5.2]
       t.timestamps null: false
     end
 
-    add_index :ckeditor_assets, :type
+    add_index :ckeditor_assets, [:assetable_type, :type, :assetable_id], name: :idx_ckeditor_assetable_type
+    add_index :ckeditor_assets, [:assetable_type, :assetable_id], name: :idx_ckeditor_assetable
   end
 
   def down
