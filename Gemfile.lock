@@ -3,6 +3,7 @@ PATH
   specs:
     ckeditor (5.1.0)
       orm_adapter (~> 0.5.0)
+      terrapin
 
 GEM
   remote: https://gems.ruby-china.com/

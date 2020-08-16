@@ -13,6 +13,7 @@ module Ckeditor
       module ClassMethods
         def self.extended(base)
           base.class_eval do
+            process :extract_content_type
             process :extract_size
           end
         end
@@ -35,6 +36,10 @@ module Ckeditor
             img = yield(img) if block_given?
             img
           end
+        end
+
+        def extract_content_type
+          model.data_content_type = Utils::ContentTypeDetector.new(file.path).detect
         end
 
         def extract_size
