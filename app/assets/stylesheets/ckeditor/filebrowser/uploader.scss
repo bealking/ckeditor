@@ -75,10 +75,12 @@ img {
 }
 .gal-holder .gal-item .gal-inner-holder .img {
   height: 100px;
-  max-height: 100px;
-  max-width: 100px;
   overflow: hidden;
   cursor:pointer;
+}
+.gal-holder .gal-item .gal-inner-holder .img {
+  max-height: 100px;
+  max-width: 100px;
 }
 .gal-holder .gal-item .gal-inner-holder .img-data {
   display: block;
